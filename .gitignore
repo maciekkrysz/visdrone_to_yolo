@@ -1,0 +1,7 @@
+yolo/
+val/
+*.zip
+train/
+runs/
+temp.sh
+images/

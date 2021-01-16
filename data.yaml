@@ -1,0 +1,5 @@
+        train: /home/maciekkrysz/Code/GitDir/visdrone/train
+        val: /home/maciekkrysz/Code/GitDir/visdrone/val
+
+        nc: 12
+        names: ['0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
