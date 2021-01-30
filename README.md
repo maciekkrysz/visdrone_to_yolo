@@ -28,4 +28,5 @@ Program "plug'n'play" that train and detect using yolo repository. VisDrone data
 ### Config file
 
 edit config.conf
+
 `python main.py`
