@@ -4,7 +4,7 @@ Program "plug'n'play" that train and detect using yolo repository. VisDrone data
 
 # Resources
 
-- [Repozytorium Yolov4](https://github.com/ultralytics/yolov5)
+- [Yolov5](https://github.com/ultralytics/yolov5)
 - [VisDrone dataset](https://github.com/VisDrone/VisDrone-Dataset)
 
 # Install
