@@ -1,29 +1,37 @@
 from utils.download_tools import download_file_from_google_drive, unzip
 from utils.converter import convert
+from utils.config_tools import get_config
 import os
-
-train_data_id = '1a2oHjcEcwXP8oUF95qiwrqzACb2YlUhn'
-val_data_id = '1bxK5zgLn0_L8x276eKkuYA_FzwCIjb59'
-train_zip_path = "./train.zip"
-val_zip_path = "./val.zip"
 
 
 def download_train_google():
+    train_data_id = get_config('Download', 'traindataid')
+    train_zip_path = get_config('Common', 'dir') + '/train.zip'
+
     download_file_from_google_drive(train_data_id, train_zip_path)
 
 
 def download_val_google():
+    val_data_id = get_config('Download', 'valdataid')
+    val_zip_path = get_config('Common', 'dir') + '/val.zip'
+
     download_file_from_google_drive(val_data_id, val_zip_path)
     
 
 def unzip_train():
+    train_zip_path = get_config('Common', 'dir') + '/train.zip'
+    train_path = get_config('Paths', 'traindir')
+
     unzip(train_zip_path)
-    exctract_from_visdrone_to_dir('./train')
+    exctract_from_visdrone_to_dir(train_path)
 
 
 def unzip_val():
+    val_zip_path = get_config('Common', 'dir') + '/val.zip'
+    val_path = get_config('Paths', 'valdir')
+
     unzip(val_zip_path)
-    exctract_from_visdrone_to_dir('./val')
+    exctract_from_visdrone_to_dir(val_path)
 
 
 def exctract_from_visdrone_to_dir(path='.'):
@@ -39,8 +47,10 @@ def exctract_from_visdrone_to_dir(path='.'):
 
 
 def convert_train():
-    convert('./train')
+    train_path = get_config('Paths', 'traindir')
+    convert(train_path)
 
 
 def convert_val():
-    convert('./val')
+    val_path = get_config('Paths', 'valdir')
+    convert(val_path)
